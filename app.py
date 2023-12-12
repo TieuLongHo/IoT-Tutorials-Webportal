@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import subprocess
 
 app = Flask(__name__)
 
@@ -13,6 +14,7 @@ def change_password(new_password):
 
 def reboot():
     print("rebooting")
+    subprocess.Popen(["sudo", "reboot"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
 @app.route("/")
