@@ -17,6 +17,11 @@ def reboot():
     subprocess.Popen(["sudo", "reboot"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
+@app.route("/settings")
+def settings():
+    return render_template("settings.html")
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
