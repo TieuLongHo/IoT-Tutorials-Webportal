@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Access Poin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <h1>Change Access Point Settings</h1>
+    <form action="/change" method="post">
+      <label for="ssid">New SSID:</label>
+      <input type="text" id="ssid" name="ssid" required /><br />
+
+      <label for="password">New Password:</label>
+      <input type="password" id="password" name="password" required /><br />
+      <label for="checkbox">Show Password</label>
+      <input type="checkbox" id="checkbox" onclick="revealPassword()" /><br />
+      <input type="submit" value="Apply Changes" />
+    </form>
+  </body>
+</html>
