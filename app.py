@@ -13,24 +13,7 @@ def change_password(new_password):
 
 
 def reboot():
-    print("rebooting")
     subprocess.Popen(["sudo", "reboot"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-
-def get_current_ssid():
-    try:
-        result = subprocess.run(
-            ["nmcli", "dev", "wifi", "list"], capture_output=True, text=True
-        )
-
-        output_lines = result.stdout.split("\n")
-        for line in output_lines:
-            if "*" in line:  # '*' indicates the connected network
-                ssid = line.split()[0]
-                return ssid
-    except Exception as e:
-        print(f"Error: {e}")
-        return None
 
 
 @app.route("/settings")
@@ -40,7 +23,6 @@ def settings():
 
 @app.route("/")
 def index():
-    print(get_current_ssid())
     return render_template("index.html")
 
 

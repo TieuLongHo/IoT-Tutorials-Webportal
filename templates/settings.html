@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Access Poin</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
   </head>
   <body>
     <h1>Change Access Point Settings</h1>
@@ -17,6 +16,16 @@
       <label for="checkbox">Show Password</label>
       <input type="checkbox" id="checkbox" onclick="revealPassword()" /><br />
       <input type="submit" value="Apply Changes" />
+      <script>
+        function revealPassword() {
+          var x = document.getElementById("password");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+      </script>
     </form>
   </body>
 </html>
